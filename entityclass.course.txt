@@ -1,0 +1,37 @@
+package com.example.jpa.Hibernaet.JPAExample;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class DeepikaCourse {
+	@Id
+	@GeneratedValue
+	private int id;
+	
+	private String Name;
+
+	public int getId() {
+		return id;
+	}	
+	public String getName() {
+		return Name;
+	}
+	public void setName(String name) {
+		Name = name;
+	}
+	public DeepikaCourse(String name) {
+		super();
+		this.id = id;
+		Name = name;
+	}
+	public DeepikaCourse() {
+		super();
+	}
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", Name=" + Name + "]";
+	}
+
+}

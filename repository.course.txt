@@ -1,0 +1,32 @@
+package com.example.jpa.Hibernaet.JPAExample;
+
+
+import javax.persistence.EntityManager;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+
+
+@Repository
+@Transactional
+public class CourseRepository {
+
+@Autowired
+EntityManager em;
+
+public DeepikaCourse findById(int id) {
+	return em.find(DeepikaCourse.class, id);
+}
+
+public void deleteById(int id) {
+	DeepikaCourse course = findById(id);
+	em.remove(course);
+}
+public DeepikaCourse save(DeepikaCourse course) {
+	
+	return course;
+	
+}
+}
